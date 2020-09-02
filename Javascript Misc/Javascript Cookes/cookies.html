@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Javascript Cookies Example</title>
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+</head>
+<body>
+
+	<div class="container" style="height: 100vh;">
+		<h1 class="mb-4">Javascript Cookies Example</h1>
+		<div class="row">
+			<div class="col-md-2">
+				<button type="button" id="setCookieBtn" class="btn btn-primary">Set Cookie</button>
+			</div>
+			<div class="col-md-2">
+				<button type="button" id="getCookieBtn" class="btn btn-primary">Get Cookie</button>
+            </div>
+            <div class="col-md-2">
+				<button type="button" id="deleteCookieBtn" class="btn btn-primary">Delete Cookie</button>
+            </div>
+            <div class="col-md-12">
+                <p id="cookie_data"></p>
+            </div>
+		</div>
+	</div>
+
+	
+	<!-- Bootstrap -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+	<script>
+
+		$("#setCookieBtn").click(function() {
+            
+
+            document.cookie = "username=Talmeez Ahmed;path=/;";
+            document.cookie += "type=Developer;expires=Sun, 20 Aug 2030 12:00:00 UTC;path=/;";
+            document.cookie += "isLogged=true;max-age=" + (60 * 60 * 24 * 365) + ";path=/;"  
+
+            // $.cookie('username', 'Talmeez Ahmed', { expires: 7, path: '/' });
+
+            console.log(document.cookie);
+            // console.log($.cookie("username"));
+            alert('Cookie is Set!');  
+        });
+        
+        $("#getCookieBtn").click(function() {
+			if(document.cookie.length != 0)  
+            {  
+                var array = document.cookie.split("=");
+                $("#cookie_data").html(`Key: ${array[0]}, Value: ${array[1]}`);
+            }  
+            else  
+            {  
+                $("#cookie_data").html(`No Cookies!`);  
+            }  
+        });
+
+        $("#deleteCookieBtn").click(function() {
+			$.removeCookie('username', { path: '/' });
+            alert("cookie deleted!");
+        });
+
+	</script>
+
+</body>
+</html>
