@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Image Upload Example</title>
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+</head>
+<body>
+
+	<div class="container" style="height: 100vh;">
+		<h1 class="mb-4">Image Upload Example: Demo 1</h1>
+		<div class="row" style="height: 100%;">
+			<div class="col-md-6">
+				<form>
+					<p class="mb-0">*Select and image to upload and view it</p>
+					<div class="custom-file mb-2">
+						
+						<input type="file" class="custom-file-input" id="customFile">
+						<label class="custom-file-label" for="customFile">Choose file</label>
+					</div>
+				</form>
+				<p class="mb-0 mt-4">Image Preview!</p>
+				<img src="http://placehold.jp/500x500.jpg" style="max-height: 350px;" id="uploaded_image_view" class="img-fluid mt-2" alt="Responsive image">
+			</div>
+			<div class="col-md-6">
+				<div class="embed-responsive embed-responsive-16by9">
+					<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/9bWA3BNx3A0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+	<!-- Bootstrap -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+	<script>
+		function readURL(input) {
+			if (input.files && input.files[0]) {
+				var reader = new FileReader();
+				
+				reader.onload = function(e) {
+					$('#uploaded_image_view').attr('src', e.target.result);
+				}
+				
+				reader.readAsDataURL(input.files[0]); // convert to base64 string
+			}
+		}
+
+		$("#customFile").change(function() {
+			readURL(this);
+		});
+	</script>
+
+</body>
+</html>
