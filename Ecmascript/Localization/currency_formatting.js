@@ -1,12 +1,12 @@
-var l10nUSD = new Intl.NumberFormat("en-US", {
+let l10nUSD = new Intl.NumberFormat("en-US", {
   style: "currency",
   currency: "USD",
 });
-var l10nGBP = new Intl.NumberFormat("en-GB", {
+let l10nGBP = new Intl.NumberFormat("en-GB", {
   style: "currency",
   currency: "GBP",
 });
-var l10nEUR = new Intl.NumberFormat("de-DE", {
+let l10nEUR = new Intl.NumberFormat("de-DE", {
   style: "currency",
   currency: "EUR",
 });
