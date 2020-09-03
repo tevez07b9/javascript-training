@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    /> -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+      crossorigin="anonymous"
+    />
+    <title>JS BOM</title>
+  </head>
+  <body>
+    <style>
+      .flex {
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+      }
+
+      .app-btn {
+        width: 45%;
+        max-width: 160px;
+        color: #fff;
+        margin: 20px 10px;
+        text-align: left;
+        border-radius: 5px;
+        text-decoration: none;
+        font-family: "Lucida Grande", sans-serif;
+        font-size: 10px;
+        text-transform: uppercase;
+      }
+      .app-btn.blu {
+        background-color: #101010;
+        -webkit-transition: background-color 0.25s linear;
+        transition: background-color 0.25s linear;
+      }
+      .app-btn.blu:hover {
+        background-color: #454545;
+      }
+      .app-btn i {
+        width: 20%;
+        text-align: center;
+        font-size: 28px;
+        margin-right: 7px;
+      }
+      .app-btn .big-txt {
+        font-size: 17px;
+        text-transform: capitalize;
+      }
+    </style>
+    <div class="container">
+      <h1>JS BOM</h1>
+      <div class="flex social-btns">
+        <a
+          style="display: none"
+          id="ios"
+          class="app-btn blu flex vert"
+          href="http:apple.com"
+        >
+          <i class="fab fa-apple"></i>
+          <p>
+            Available on the <br />
+            <span class="big-txt">App Store</span>
+          </p>
+        </a>
+
+        <a
+          style="display: none"
+          id="android"
+          class="app-btn blu flex vert"
+          href="http:google.com"
+        >
+          <i class="fab fa-google-play"></i>
+          <p>
+            Get it on <br />
+            <span class="big-txt">Google Play</span>
+          </p>
+        </a>
+
+        <a
+          style="display: none"
+          id="web"
+          class="app-btn blu flex vert"
+          href="http:alphorm.com"
+        >
+          <i class="fas fa-desktop"></i>
+          <p>
+            Application <br />
+            <span class="big-txt">Desktop</span>
+          </p>
+        </a>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      /**
+       * Determine the mobile operating system.
+       * This function returns one of 'iOS', 'Android', 'Windows Phone', or 'unknown'.
+       *
+       * @returns {String}
+       */
+      function getMobileOperatingSystem() {
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+        if (/android/i.test(userAgent)) {
+          return "Android";
+        }
+
+        // iOS detection from: http://stackoverflow.com/a/9039885/177710
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+          return "iOS";
+        }
+
+        if (userAgent.indexOf("Chrome") > -1) {
+          return "Chrome";
+        }
+
+        if (userAgent.indexOf("MSIE") > -1 || userAgent.indexOf("rv:") > -1) {
+          return "Internet Explorer";
+        }
+
+        if (userAgentString.indexOf("Firefox") > -1) {
+          return "Firefox";
+        }
+
+        return "Desktop";
+      }
+
+      $(document).ready(function () {
+        console.log("ready!");
+        var user_agent = getMobileOperatingSystem();
+        switch (user_agent) {
+          case "Android":
+            $("#android").show();
+            break;
+          case "iOS":
+            $("#ios").show();
+            break;
+          case "Chrome":
+          case "Internet Explorer":
+          case "Firefox":
+          case "Desktop":
+            $("#web").show();
+            break;
+        }
+      });
+
+      document.writeln("<br/>system: " + getMobileOperatingSystem());
+    </script>
+  </body>
+</html>

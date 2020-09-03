@@ -1,0 +1,23 @@
+{
+  "name": "training_research",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tevez07b9/javascript-training.git"
+  },
+  "keywords": [],
+  "author": "Talmeez Ahmed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tevez07b9/javascript-training/issues"
+  },
+  "homepage": "https://github.com/tevez07b9/javascript-training#readme",
+  "dependencies": {
+    "http-server": "^0.12.3"
+  }
+}
