@@ -1,4 +1,68 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  font-family: "Roboto Mono", monospace;
+}
 .App {
-  font-family: sans-serif;
+  font-family: "Roboto Mono", monospace;
   text-align: center;
+}
+.app_layout {
+  display: flex;
+  height: 100vh;
+}
+.main {
+  flex: 0.7;
+  padding-top: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  height: calc(100% - 30px);
+  overflow: scroll;
+}
+.main::-webkit-scrollbar {
+  display: none;
+}
+.main {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.sidebar {
+  flex: 0.3;
+  padding-top: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: scroll;
+
+  height: calc(100%);
+  background-color: #f7f7f7;
+}
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+.sidebar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.title {
+  font-size: 60px !important;
+  margin-bottom: 20px;
+  line-height: 65px !important;
+  font-weight: 700 !important;
+}
+
+li {
+  list-style-type: none;
+}
+
+.link {
+  color: #4a4a4a;
+  display: block;
+  margin-bottom: 10px;
+}
+.fancyborder {
+  border: 5px dashed red;
+  border-radius: 10px;
 }
