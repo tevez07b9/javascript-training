@@ -36,6 +36,9 @@ const AppLayout = () => {
         <Link className="link" to="/accessibility">
           Accessibility
         </Link>
+        <Link className="link" to="/react-context">
+          Context
+        </Link>
         <Link className="link" to="/error-boundaries">
           Error Boundaries
         </Link>

@@ -13,6 +13,7 @@ import WithoutJSX from "./components/WithoutJSX";
 import Fragments from "./components/Fragments";
 import CodeSplitting from "./components/CodeSplitting";
 import UncontrolledComponents from "./components/UncontrolledComponents";
+import Context from "./components/Context";
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
         <Route exact path="/composition" component={Composition} />
         <Route exact path="/accessibility" component={Accessibility} />
         <Route exact path="/error-boundaries" component={ErrorBoundaries} />
+        <Route exact path="/react-context" component={Context} />
         <Route exact path="/without-jsx" component={WithoutJSX} />
         <Route exact path="/fragments" component={Fragments} />
         <Route exact path="/code-splitting" component={CodeSplitting} />
