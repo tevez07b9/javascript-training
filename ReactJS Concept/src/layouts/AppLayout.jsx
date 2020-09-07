@@ -48,6 +48,9 @@ const AppLayout = () => {
         <Link className="link" to="/code-splitting">
           Code Splitting
         </Link>
+        <Link className="link" to="/uncontrolled-components">
+          Uncontrolled Components
+        </Link>
       </div>
     </div>
   );
