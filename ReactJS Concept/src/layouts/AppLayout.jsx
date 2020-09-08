@@ -54,6 +54,36 @@ const AppLayout = () => {
         <Link className="link" to="/uncontrolled-components">
           Uncontrolled Components
         </Link>
+        <Link className="link" to="/prop-types">
+          PropTypes
+        </Link>
+        <Link className="link" to="/strict-mode">
+          React Strict Mode
+        </Link>
+        <Link className="link" to="/use-state">
+          Use State Hook
+        </Link>
+        <Link className="link" to="/use-effect">
+          Use Effect Hook
+        </Link>
+        <Link className="link" to="/domrefs">
+          Refs and the DOM
+        </Link>
+        <Link className="link" to="/forward-refs">
+          Forwarding Refs
+        </Link>
+        <Link className="link" to="/higherOrder-components">
+          HigherOrderComponents
+        </Link>
+        <Link className="link" to="/reconciliation">
+          Reconciliation
+        </Link>
+        <Link className="link" to="/webcomponents">
+          Web Components
+        </Link>
+        <Link className="link" to="/synthetic-events">
+          Synthetic Events
+        </Link>
       </div>
     </div>
   );

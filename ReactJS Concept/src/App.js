@@ -14,6 +14,16 @@ import Fragments from "./components/Fragments";
 import CodeSplitting from "./components/CodeSplitting";
 import UncontrolledComponents from "./components/UncontrolledComponents";
 import Context from "./components/Context";
+import PropTypes from "./components/PropTypes";
+import ReactStrictMode from "./components/ReactStrictMode";
+import useStateHook from "./components/useState";
+import useEffectHook from "./components/useEffect";
+import DOMRefs from "./components/DOMRefs";
+import forwardRefs from "./components/forwardRefs";
+import HigherOrderComponents from "./components/HigherOrderComponents";
+import Reconciliation from "./components/Reconciliation";
+import WebComponents from "./components/WebComponents";
+import SyntheticEvents from "./components/SyntheticEvents";
 
 export default function App() {
   return (
@@ -32,6 +42,20 @@ export default function App() {
         <Route exact path="/without-jsx" component={WithoutJSX} />
         <Route exact path="/fragments" component={Fragments} />
         <Route exact path="/code-splitting" component={CodeSplitting} />
+        <Route exact path="/prop-types" component={PropTypes} />
+        <Route exact path="/strict-mode" component={ReactStrictMode} />
+        <Route exact path="/use-state" component={useStateHook} />
+        <Route exact path="/use-effect" component={useEffectHook} />
+        <Route exact path="/domrefs" component={DOMRefs} />
+        <Route exact path="/forward-refs" component={forwardRefs} />
+        <Route
+          exact
+          path="/higherOrder-components"
+          component={HigherOrderComponents}
+        />
+        <Route exact path="/reconciliation" component={Reconciliation} />
+        <Route exact path="/webcomponents" component={WebComponents} />
+        <Route exact path="/synthetic-events" component={SyntheticEvents} />
         <Route
           exact
           path="/uncontrolled-components"
